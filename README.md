@@ -39,10 +39,12 @@ Predict which customers respond positively to an automobile insurance offer base
 ## 🏗️ Project Structure
 
 ### Phase 1: Exploratory Data Analysis (EDA)
-**File**: `classification-of-insurance-cross-selling-eda.ipynb`
+**File**: [classification-of-insurance-cross-selling-eda.ipynb](https://github.com/marcelaman777/insurance-cross-sell-predictor/blob/main/classification-of-insurance-cross-selling-eda.ipynb)  
+*Comprehensive data analysis, statistical testing, and feature relationship exploration*
 
 ### Phase 2: CatBoost Modeling with Weight of Evidence
-**File**: `insurance-selling-weight-of-evidence-catboost.ipynb`
+**File**: [insurance-selling-weight-of-evidence-catboost.ipynb](https://github.com/marcelaman777/insurance-cross-sell-predictor/blob/main/insurance-selling-weight-of-evidence-catboost.ipynb)  
+*Advanced feature engineering with WoE encoding and CatBoost model implementation*
 
 ## 🔍 EDA Methodology
 
@@ -182,7 +184,7 @@ pip install pandas numpy matplotlib seaborn scipy scikit-learn statsmodels princ
 ## Usage
 **Clone this repository:**
 ```bash
-git clone https://github.com/tuusuario/insurance-cross-selling-eda.git
+git clone https://github.com/marcelaman777/insurance-cross-sell-predictor.git
 ```
 
 **Navigate to the project directory:**
