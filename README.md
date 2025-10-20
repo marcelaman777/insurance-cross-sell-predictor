@@ -36,7 +36,17 @@ Predict which customers respond positively to an automobile insurance offer base
 ### Target Variable
 - **Response**: 1 - Customer is interested, 0 - Customer is not interested
 
-## 🏗️ Project Structure
+## 📊 Evaluation Framework
+
+**Area Under the ROC Curve (AUC-ROC)**
+- **Range**: 0 to 1 (higher is better)
+- **Interpretation:**
+  - 0.5 = Random guessing
+  - 0.7-0.8 = Good model
+  - 0.8-0.9 = Very good model
+  - \>0.9 = Excellent model
+
+## 🏗️ Project Architecture
 
 ### Phase 1: Exploratory Data Analysis (EDA)
 **File**: [classification-of-insurance-cross-selling-eda.ipynb](https://github.com/marcelaman777/insurance-cross-sell-predictor/blob/main/classification-of-insurance-cross-selling-eda.ipynb)  
@@ -71,7 +81,7 @@ This notebook implements a comprehensive EDA approach:
 - **Weight of Evidence (WoE) Transformation**: For categorical feature encoding
 - **Factor Analysis for Mixed Data (FAMD)**: Dimensionality reduction for mixed data types
 
-### 📈 Key Insights from EDA
+### 5. Key Insights from EDA
 
 **Strong Correlations Identified (Spearman's method):**
 - **Vehicle_Damage ↔ Previously_Insured** (-0.84)
@@ -174,6 +184,34 @@ model_params = {
 - Stratified cross-validation for robust evaluation
 - GPU-accelerated training with CatBoost
 
+## 🔮 Future Work
+**Model Improvements**
+- Hyperparameter Optimization: Bayesian optimization for CatBoost parameters
+- Feature Engineering: Create interaction terms based on EDA insights
+- Ensemble Methods: Combine CatBoost with other gradient boosting models
+- Class Balancing: Address potential class imbalance if present
+
+**Advanced Techniques**
+- SHAP Analysis: For model interpretability and feature importance
+- Cross-Validation: Group-based cross-validation
+- Model Calibration: Ensure predicted probabilities are well-calibrated
+- Deployment Pipeline: API for real-time predictions
+
+## 📚 References
+
+**Competition & Data**
+- [Kaggle Competition: Playground Series S4E7](https://www.kaggle.com/competitions/playground-series-s4e7)
+- [Original Dataset: Health Insurance Cross Sell Prediction](https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction)
+
+**Technical References**
+- [CatBoost Documentation](https://catboost.ai/)
+- [Weight of Evidence Explained](https://www.listendata.com/2015/03/weight-of-evidence-woe-and-information.html)
+- [Prince Documentation - FAMD](https://github.com/MaxHalford/prince)
+
+## 🏆 Achievement Summary
+
+This project demonstrates a complete machine learning pipeline from exploratory data analysis to production-ready modeling, featuring advanced techniques like Weight of Evidence transformation and GPU-accelerated CatBoost training on large-scale insurance data.
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -201,42 +239,13 @@ jupyter notebook classification-of-insurance-cross-selling-eda.ipynb
 jupyter notebook insurance-selling-weight-of-evidence-catboost.ipynb
 ```
 
-## 📊 Evaluation Metric
-This project is part of [Kaggle's Playground Series S4E7 competition](https://www.kaggle.com/competitions/playground-series-s4e7). The model performance is evaluated using:
+## 📁 Project Structure
 
-**Area Under the ROC Curve (AUC-ROC)**
-- **Range**: 0 to 1 (higher is better)
-- **Interpretation:**
-  - 0.5 = Random guessing
-  - 0.7-0.8 = Good model
-  - 0.8-0.9 = Very good model
-  - \>0.9 = Excellent model
-
-## 📊 Competition Details
-- **Competition**: [Playground Series Season 4 Episode 7](https://www.kaggle.com/competitions/playground-series-s4e7)
-- **Evaluation**: AUC-ROC
-- **Submission Format**: CSV with customer IDs and predicted probabilities
-
-## 🔮 Future Work
-**Model Improvements**
-- Hyperparameter Optimization: Bayesian optimization for CatBoost parameters
-- Feature Engineering: Create interaction terms based on EDA insights
-- Ensemble Methods: Combine CatBoost with other gradient boosting models
-- Class Balancing: Address potential class imbalance if present
-
-**Advanced Techniques**
-- SHAP Analysis: For model interpretability and feature importance
-- Cross-Validation Strategies: Time-series or group-based CV
-- Model Calibration: Ensure predicted probabilities are well-calibrated
-
-## 📚 References
-**Competition & Data**
-- [Kaggle Competition: Playground Series S4E7](https://www.kaggle.com/competitions/playground-series-s4e7)
-- [Original Dataset: Health Insurance Cross Sell Prediction](https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction)
-
-**Technical References**
-- [CatBoost Documentation](https://catboost.ai/)
-- [Weight of Evidence Explained](https://www.listendata.com/2015/03/weight-of-evidence-woe-and-information.html)
-- [Prince Documentation - FAMD](https://github.com/MaxHalford/prince)
-
-**🌟 Highlights:** This project demonstrates a complete machine learning pipeline from exploratory data analysis to production-ready modeling, featuring advanced techniques like Weight of Evidence transformation and GPU-accelerated CatBoost training on large-scale insurance data.
+```bash
+insurance-cross-sell-predictor/
+├── .gitignore                                             # Git ignore rules
+├── LICENSE                                                # MIT License file
+├── README.md                                              # Project documentation
+├── classification-of-insurance-cross-selling-eda.ipynb    # Comprehensive data analysis, statistical testing, and feature relationship exploratio
+└── insurance-selling-weight-of-evidence-catboost.ipynb    # Advanced feature engineering with WoE encoding and CatBoost model implementation
+```
